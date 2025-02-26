@@ -1,5 +1,8 @@
+import gradle.kotlin.dsl.accessors._1e0889f6329f4d2900bdf72ec54f44ca.implementation
 import org.gradle.accessors.dm.LibrariesForLibs
 import org.gradle.kotlin.dsl.dependencies
+import org.gradle.kotlin.dsl.kotlin
+import org.gradle.kotlin.dsl.the
 
 
 // Нужен, т.к. модуль utils-compose не может имплементировать сам себя

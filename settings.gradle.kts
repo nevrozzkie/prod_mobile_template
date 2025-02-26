@@ -1,3 +1,4 @@
+
 pluginManagement {
     repositories {
         google {
@@ -17,8 +18,17 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
+
 }
 
 rootProject.name = "MobileTemplate"
 include(":app")
- 
+include(":core")
+include(":utils")
+include(":utils-ui")
+include(":features:auth:data")
+include(":features:auth:domain")
+include(":features:auth:presentation")
+include(":features:auth:ui")
+
+

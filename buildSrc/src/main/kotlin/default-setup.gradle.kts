@@ -1,5 +1,8 @@
+import gradle.kotlin.dsl.accessors._05a4e5c2a06ee7aa20c791cd0fb1cc1f.android
+import gradle.kotlin.dsl.accessors._05a4e5c2a06ee7aa20c791cd0fb1cc1f.implementation
 import org.gradle.accessors.dm.LibrariesForLibs
 import org.gradle.kotlin.dsl.dependencies
+import org.gradle.kotlin.dsl.kotlin
 import org.gradle.kotlin.dsl.the
 
 
