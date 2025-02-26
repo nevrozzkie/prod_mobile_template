@@ -6,15 +6,15 @@ plugins {
 }
 
 android {
-    namespace = "com.prod2025.mobiletemplate"
-    compileSdk = 35
+    namespace = Config.Android.namespace
+    compileSdk = Config.Android.compileSdk
 
     defaultConfig {
-        applicationId = "com.prod2025.mobiletemplate"
-        minSdk = 26
-        targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = Config.Android.namespace
+        minSdk = Config.Android.minSdk
+        targetSdk = Config.Android.targetSdk
+        versionCode = Config.Android.versionCode
+        versionName = Config.Android.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -29,11 +29,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = Config.Java.version
+        targetCompatibility = Config.Java.version
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = Config.Java.stringVersion
     }
     buildFeatures {
         compose = true

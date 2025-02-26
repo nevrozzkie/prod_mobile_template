@@ -1,8 +1,6 @@
 import org.gradle.accessors.dm.LibrariesForLibs
 import org.gradle.kotlin.dsl.dependencies
-import org.gradle.kotlin.dsl.kotlin
 import org.gradle.kotlin.dsl.the
-import org.gradle.kotlin.dsl.withType
 
 
 // setup, необходимый для работы модулей. Используется в других setup
@@ -18,21 +16,22 @@ android {
     /*
     Дефолтное значение namespace
     Может ругаться IDE на ресурсы -> в модуле прописывать отдельно
+    ПРО РЕСУРСЫ МБ РЕШАЕТ ПРОБЛЕМУ СНИЗУ SourceSets!!
     */
-    namespace = "com.prod2025.mobiletemplate"
-    compileSdk = Config.COMPILE_SDK
+    namespace = Config.Android.namespace + ".convention"
+    compileSdk = Config.Android.compileSdk
     defaultConfig {
-        minSdk = 26
+        minSdk = Config.Android.minSdk
+    }
+
+
+    sourceSets {
+        named("main") {
+            res.srcDirs("src/main/res")
+        }
     }
 }
 
 dependencies {
     implementation(libs.kotlinx.datetime)
-}
-
-kotlin {
-    jvmToolchain(17)
-    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-        kotlinOptions.jvmTarget = "17"
-    }
 }
