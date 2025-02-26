@@ -1,4 +1,4 @@
-package com.prod2025.mobiletemplate
+package com.prod2025.mobile_template
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,7 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.prod2025.mobiletemplate.ui.theme.MobileTemplateTheme
+import com.prod2025.mobile_template.ui.theme.MobileTemplateTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
