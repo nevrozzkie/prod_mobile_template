@@ -6,6 +6,5 @@ plugins {
 
 
 dependencies {
-    //TODO
-//    implementation(project(":utils-compose"))
+    implementation(project(Module.utilsUI))
 }

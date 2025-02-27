@@ -9,13 +9,16 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.prod2025.mobile_template.ui.theme.MobileTemplateTheme
 import coreModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
+import view.compositionLocals.LocalViewManager
+import view.compositionLocals.initViewManager
+import view.compositionLocals.viewManagerState
+import view.theme.AppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,13 +34,23 @@ class MainActivity : ComponentActivity() {
 
 
         enableEdgeToEdge()
+
+//        val prefs: SharedPreferences = Inject.instance()
+//        val viewManager = getViewManager(prefs.getString(themeSettings, "Dark") ?: "Dark")
+
+        viewManagerState = initViewManager("Dark")
+
         setContent {
-            MobileTemplateTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+            CompositionLocalProvider(
+                LocalViewManager provides viewManagerState
+            ) {
+                AppTheme {
+                    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                        Greeting(
+                            name = "Android",
+                            modifier = Modifier.padding(innerPadding)
+                        )
+                    }
                 }
             }
         }
@@ -50,12 +63,4 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         text = "Hello $name!",
         modifier = modifier
     )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MobileTemplateTheme {
-        Greeting("Android")
-    }
 }
