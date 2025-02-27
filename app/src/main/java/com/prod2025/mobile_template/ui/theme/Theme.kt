@@ -1,6 +1,5 @@
-package com.prod2025.mobiletemplate.ui.theme
+package com.prod2025.mobile_template.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

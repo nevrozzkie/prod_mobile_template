@@ -38,3 +38,10 @@ android {
 dependencies {
     implementation(libs.kotlinx.datetime)
 }
+
+kotlin {
+    jvmToolchain(Config.Java.intVersion)
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+        kotlinOptions.jvmTarget = Config.Java.stringVersion
+    }
+}

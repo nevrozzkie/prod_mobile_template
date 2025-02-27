@@ -41,6 +41,7 @@ android {
 }
 
 dependencies {
+    implementation(project(Module.core))
     implementation(libs.decompose.compose)
 
     implementation(libs.mvikotlin.core)
