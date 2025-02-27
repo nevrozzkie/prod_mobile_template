@@ -21,7 +21,14 @@ class AuthStoreFactory(
         AuthStore,
         Store<Intent, State, Label> by storeFactory.create(
             name = "AuthStore",
-            initialState = State(),
+            initialState = State(
+                email = "",
+                firstName = "",
+                lastName = "",
+                password = "",
+                confirmPassword = "",
+                destination = State.Destination.Welcome
+            ),
             executorFactory = ::executor,
             reducer = AuthReducer
         )

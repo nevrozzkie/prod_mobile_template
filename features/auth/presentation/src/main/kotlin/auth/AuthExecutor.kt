@@ -13,7 +13,14 @@ class AuthExecutor(
 ) : CoroutineExecutor<Intent, Unit, State, Message, Label>() {
     override fun executeIntent(intent: Intent) {
         when (intent) {
-            else -> TODO()
+            is Intent.ChangeAvatar -> TODO()
+            is Intent.ChangeConfirmPassword -> TODO()
+            is Intent.ChangeDestination -> TODO()
+            is Intent.ChangeEmail -> TODO()
+            is Intent.ChangeFirstName -> TODO()
+            is Intent.ChangeLastName -> TODO()
+            is Intent.ChangePassword -> TODO()
+            is Intent.ClickAuth -> TODO()
         }
     }
 }
