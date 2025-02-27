@@ -7,12 +7,44 @@ import auth.AuthStore.State
 
 interface AuthStore : Store<Intent, State, Label> {
     data class State(
-        val dummy: String = "dummy"
-    )
+        val email: String,
+        val firstName: String,
+        val lastName: String,
+        val password: String,
+        val confirmPassword: String,
+        val destination: Destination,
+        val avatar: ByteArray? = null,
+    ) {
+        sealed interface Destination {
+            data object Welcome : Destination
+            data object Registartion : Destination
+            data object Login : Destination
+        }
+    }
 
-    sealed interface Intent
+    sealed interface Intent {
+        data class ChangeDestination(val destination: State.Destination) : Intent
 
-    sealed interface Message
+        data class ChangeEmail(val email: String) : Intent
+        data class ChangeFirstName(val firstName: String) : Intent
+        data class ChangeLastName(val lastName: String) : Intent
+        data class ChangePassword(val password: String) : Intent
+        data class ChangeConfirmPassword(val confirmPassword: String) : Intent
+        data class ChangeAvatar(val avatar: ByteArray) : Intent
+
+        data object ClickAuth : Intent
+    }
+
+    sealed interface Message {
+        data class ChangeDestination(val destination: State.Destination) : Message
+
+        data class ChangeEmail(val email: String) : Message
+        data class ChangeFirstName(val firstName: String) : Message
+        data class ChangeLastName(val lastName: String) : Message
+        data class ChangePassword(val password: String) : Message
+        data class ChangeConfirmPassword(val confirmPassword: String) : Message
+        data class ChangeAvatar(val avatar: ByteArray) : Message
+    }
 
     sealed interface Label
 
