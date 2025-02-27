@@ -1,3 +1,4 @@
+
 plugins {
     id(libs.plugins.android.application.get().pluginId)
     id(libs.plugins.kotlin.android.get().pluginId)
@@ -41,9 +42,17 @@ android {
 }
 
 dependencies {
+
+    implementation(project(Module.Features.Auth.presentation))
+    implementation(project(Module.Features.Auth.ui))
+
+
     implementation(project(Module.core))
     implementation(project(Module.utilsUI))
+
+
     implementation(libs.decompose.compose)
+
 
     implementation(libs.mvikotlin.core)
     implementation(libs.mvikotlin.main)

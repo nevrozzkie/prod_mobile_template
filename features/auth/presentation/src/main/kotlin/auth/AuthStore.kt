@@ -17,7 +17,7 @@ interface AuthStore : Store<Intent, State, Label> {
     ) {
         sealed interface Destination {
             data object Welcome : Destination
-            data object Registartion : Destination
+            data object Registration : Destination
             data object Login : Destination
         }
     }

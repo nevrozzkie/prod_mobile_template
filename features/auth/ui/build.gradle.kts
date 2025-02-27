@@ -3,5 +3,5 @@ plugins {
 }
 
 dependencies {
-    api(project(Module.Features.Auth.ui))
+    api(project(Module.Features.Auth.presentation))
 }

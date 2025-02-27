@@ -4,4 +4,5 @@ plugins {
 
 dependencies {
     api(project(Module.Features.Auth.domain))
+
 }
