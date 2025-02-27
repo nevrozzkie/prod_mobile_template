@@ -12,9 +12,6 @@ plugins {
 
 
 dependencies {
-
-    // TODO
-//    implementation(project(":core"))
-//    implementation(project(":utils"))
-
+    implementation(project(Module.core))
+    implementation(project(Module.utils))
 }
