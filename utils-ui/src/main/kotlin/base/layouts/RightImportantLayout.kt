@@ -1,4 +1,4 @@
-package base
+package base.layouts
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
@@ -19,16 +19,16 @@ private object RightImportantLayoutIds {
 fun RightImportantLayout(
     modifier: Modifier = Modifier,
     rightSideMaxPart: Float = 0.8f,
-    leftSide: @Composable (RowScope) -> Unit,
-    rightSide: @Composable (RowScope) -> Unit,
+    leftSide: @Composable RowScope.() -> Unit,
+    rightSide: @Composable RowScope.() -> Unit,
 ) {
     Layout(
         content = {
             Row(Modifier.layoutId(RightImportantLayoutIds.LEFT_SIDE), verticalAlignment = Alignment.CenterVertically) {
-                leftSide(this)
+                leftSide()
             }
             Row(Modifier.layoutId(RightImportantLayoutIds.RIGHT_SIDE), verticalAlignment = Alignment.CenterVertically) {
-                rightSide(this)
+                rightSide()
             }
         },
         modifier = modifier

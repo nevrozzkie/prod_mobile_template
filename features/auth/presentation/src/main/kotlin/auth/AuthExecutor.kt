@@ -13,13 +13,13 @@ class AuthExecutor(
 ) : CoroutineExecutor<Intent, Unit, State, Message, Label>() {
     override fun executeIntent(intent: Intent) {
         when (intent) {
-            is Intent.ChangeAvatar -> TODO()
-            is Intent.ChangeConfirmPassword -> TODO()
-            is Intent.ChangeDestination -> TODO()
-            is Intent.ChangeEmail -> TODO()
-            is Intent.ChangeFirstName -> TODO()
-            is Intent.ChangeLastName -> TODO()
-            is Intent.ChangePassword -> TODO()
+            is Intent.ChangeAvatar -> dispatch(Message.ChangeAvatar(intent.avatar))
+            is Intent.ChangeConfirmPassword -> dispatch(Message.ChangeConfirmPassword(intent.confirmPassword))
+            is Intent.ChangeDestination -> dispatch(Message.ChangeDestination(intent.destination))
+            is Intent.ChangeEmail -> dispatch(Message.ChangeEmail(intent.email))
+            is Intent.ChangeFirstName -> dispatch(Message.ChangeFirstName(intent.firstName))
+            is Intent.ChangeLastName -> dispatch(Message.ChangeLastName(intent.lastName))
+            is Intent.ChangePassword -> dispatch(Message.ChangePassword(intent.password))
             is Intent.ClickAuth -> TODO()
         }
     }
