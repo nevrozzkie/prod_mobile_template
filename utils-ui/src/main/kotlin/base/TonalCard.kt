@@ -15,25 +15,6 @@ import androidx.compose.ui.unit.dp
 import view.colorScheme
 import view.shapes
 
-
-@Composable
-fun TonalCard(
-    modifier: Modifier = Modifier,
-    shape: Shape = shapes.large,
-    elevation: Dp = 10.dp, //TODO
-    onClick: (() -> Unit)? = null,
-    content: @Composable () -> Unit
-) {
-    val containerColor = colorScheme.surfaceColorAtElevation(elevation)
-    TonalCard(
-        modifier = modifier,
-        shape = shape,
-        containerColor = containerColor,
-        onClick = onClick,
-        content = content
-    )
-}
-
 @Composable
 fun TonalCard(
     modifier: Modifier = Modifier,
